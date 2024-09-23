@@ -51,11 +51,11 @@ public class JSONTranslationExample {
      */
     public String getCountryNameTranslation(String countryCode, String languageCode) {
         for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject jsonObject = jsonArray.getJSONObject(i);
-            if (jsonObject.getString("alpha3").equals(countryCode)) {
-                return jsonObject.getString(languageCode);
+            if (jsonArray.getJSONObject(i).getString("alpha3").equals(countryCode)) {
+                return jsonArray.getJSONObject(i).getString(languageCode);
             }
         }
+        // else:
         return "Country not found";
     }
 
